@@ -14,7 +14,7 @@
                     </div>
                     @endif
                     <form action="{{ url('usuarios/add') }}" method="post">
-                        @csrf
+                    @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome:</label>
                             <input type="text" name="name" class="form-control">
@@ -30,9 +30,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
                         </div>

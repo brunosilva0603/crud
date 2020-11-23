@@ -15,38 +15,30 @@
                     @endif
 
                     <h1>Lista dos usuarios</h1>
-                    @foreach( $usuarios as $u )
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Login</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach( $usuarios as $u )
+
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                                <th scope="row">{{ $u->user_id }}</th>
+                                <td>{{ $u->name }}</td>
+                                <td>{{ $u->login }}</td>
+                                <td>{{ $u->status }}</td>
+                                <td><button href="{{ url('usuarios/edit') }}" class="btn btn-warning btn-sm">Editar</button>
+                                    <button class="btn btn-danger btn-sm">Deletar</button>
+                                    <button class="btn btn-secondary btn-sm">Desativar</button>
+                            </tr>@endforeach
                         </tbody>
                     </table>
-                    @endforeach
                 </div>
             </div>
         </div>

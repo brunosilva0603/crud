@@ -22,4 +22,8 @@ class UsuariosController extends Controller
         $usuario = $usuario->create( $request->all());
         return Redirect::to('/usuarios');
     }
+
+    public function edit (){
+        return view('usuarios.form');
+    }
 }
