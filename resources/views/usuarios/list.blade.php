@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    <h1>Lista dos usuários</h1>
+                    <h1>Lista dos usuarios</h1>
+                    @foreach( $usuarios as $u )
+                    <p>{{ $u->user_id }} | {{ $u->name }} | {{ $u->login }} | {{ $u->password }} | {{ $u->status }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
