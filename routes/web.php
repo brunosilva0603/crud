@@ -24,6 +24,6 @@ Route::group(['middleware' => 'web'], function () {
 Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class, 'index']); //rota ver usuarios
 Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new']); //rota criar novo usuário
 Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add']); //rota adicionar new
-Route::get('/usuarios/{user_id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit']);
+Route::get('usuarios/{user_id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit']);
 
 

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><a href="{{ url('/') }}">Voltar</a> | <a href="{{ url('usuarios/new') }}">Novo usuario</a></div>
+                <div class="card-header"><a href="{{ url('/') }}">Home</a> | <a href="{{ url('usuarios/new') }}">Novo usuario</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -36,8 +36,8 @@
                                     <div class="well hidden well-sm" data-target="tabela1">
                                         <div class="actions">
                                             <div class="btn-group">
+                                                <a href="#" type="button" class="btn btn-secondary btn-sm">Visualizar</a>
                                                 <a href="usuarios/{{ $u->user_id }}/edit" type="button" class="btn btn-warning btn-sm">Editar</a>
-                                                <a href="#" type="button" class="btn btn-secondary btn-sm">Desativar</a>
                                                 <a href="#" type="button" class="btn btn-danger btn-sm">Excluir</a>
                                             </div>
                                         </div>
