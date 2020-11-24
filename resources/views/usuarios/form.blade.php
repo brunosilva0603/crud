@@ -13,8 +13,32 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form action="{{ url('usuarios/add') }}" method="post">
-                    @csrf
+
+                    @if( Request::is('*/edit'))
+                    <form action="{{ url('usuarios/add') }}" method="post" oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
+                        @csrf
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome:</label>
+                            <input type="text" name="name" class="form-control" value="{{ $usuario->name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Login:</label>
+                            <input type="text" name="login" class="form-control" value="{{ $usuario->login }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Digite sua senha</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirme sua senha</label>
+                            <input type="password2" name="password2" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                    </form>
+                    @else
+
+                    <form action="{{ url('usuarios/add') }}" method="post" oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome:</label>
                             <input type="text" name="name" class="form-control">
@@ -23,29 +47,17 @@
                             <label for="exampleInputEmail1">Login:</label>
                             <input type="text" name="login" class="form-control">
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Digite sua senha</label>
+                            <input type="password" name="password" class="form-control">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirme sua senha</label>
+                            <input type="password2" name="password2" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

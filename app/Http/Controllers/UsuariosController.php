@@ -8,22 +8,27 @@ use Illuminate\Support\Facades\Redirect;
 
 class UsuariosController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $usuarios = Usuario::get();
         return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
-    public function new(){
+    public function new()
+    {
         return view('usuarios.form');
     }
 
-    public function add ( Request $request){
+    public function add(Request $request)
+    {
         $usuario = new Usuario;
-        $usuario = $usuario->create( $request->all());
+        $usuario = $usuario->create($request->all());
         return Redirect::to('/usuarios');
     }
 
-    public function edit (){
-        return view('usuarios.form');
+    public function edit($id)
+    {
+        $usuario = Usuario::FindOrFail($id);
+        return view('usuarios.form', ['usuario' => $usuario]);
     }
 }
