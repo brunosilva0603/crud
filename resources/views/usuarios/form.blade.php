@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Confirme sua senha</label>
-                            <input type="password2" name="password2" class="form-control">
+                            <input type="password" name="password2" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Atualizar</button>
                     </form>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Confirme sua senha</label>
-                            <input type="password2" name="password2" class="form-control">
+                            <input type="password" name="password2" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>

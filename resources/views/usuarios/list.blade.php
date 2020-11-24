@@ -37,7 +37,8 @@
                                     <div class="well hidden well-sm" data-target="tabela1">
                                         <div class="actions">
                                             <div class="btn-group">
-                                                <a href="{{ url('/usuarios/edit') }}" class="btn btn-warning btn-sm">Editar</a>
+                                                <a href="usuarios{{ $u->id }}/edit" type="button" class="btn btn-warning btn-sm">Editar</a>
+                                                <a href="#" type="button" class="btn btn-secondary btn-sm">Desativar</a>
                                                 <a href="#" type="button" class="btn btn-danger btn-sm">Excluir</a>
                                             </div>
                                         </div>

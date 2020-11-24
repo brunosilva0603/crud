@@ -1,4 +1,5 @@
 /node_modules
+/projectapp
 /public/hot
 /public/storage
 /storage/*.key

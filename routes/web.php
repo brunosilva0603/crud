@@ -25,3 +25,4 @@ Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class, 'index'
 Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new']); //rota criar novo usuário
 Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add']); //rota adicionar new
 Route::get('/usuarios/{id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit']); //rota adicionar edit
+
