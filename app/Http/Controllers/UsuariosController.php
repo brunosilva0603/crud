@@ -10,7 +10,7 @@ class UsuariosController extends Controller
 {
     public function index()
     {
-        $usuarios = Usuario::get();
+        $usuarios = Usuario::where('status',1)->get();
         return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
@@ -31,7 +31,7 @@ class UsuariosController extends Controller
         $usuario = Usuario::findOrFail($id);
         return view('usuarios.form', ['usuario' => $usuario]);
     }
-    
+
     public function update($id, Request $request)
     {
         $usuario = Usuario::findOrFail($id);
