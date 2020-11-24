@@ -17,16 +17,15 @@
                     @endif
 
                     @if( Request::is('*/edit'))
-                    <form action="{{ url('usuarios/update') }}" method="post" >
+                    <form action="{{ url('usuarios/update') }}/{{ $usuario->id}}" method="post" >
                         @csrf
-                        @method('PUT')
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome:</label>
                             <input type="text" name="name" class="form-control" value="{{ $usuario->name }}"> 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Login:</label>
-                            <input type="text" name="login" class="form-control" value="{{ $usuario->login }}"> 
+                            <input type="text" name="user_id" class="form-control" value="{{ $usuario->user_id }}"> 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Digite sua senha</label>

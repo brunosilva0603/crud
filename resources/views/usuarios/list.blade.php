@@ -28,16 +28,16 @@
                         <tbody>
                             @foreach( $usuarios as $u )
                             <tr>
-                                <th scope="row">{{ $u->user_id }}</th>
+                                <th scope="row">{{ $u->id }}</th>
                                 <td>{{ $u->name }}</td>
-                                <td>{{ $u->login }}</td>
+                                <td>{{ $u->user_id }}</td>
                                 <td>{{ $u->status }}</td>
                                 <td>
                                     <div class="well hidden well-sm" data-target="tabela1">
                                         <div class="actions">
                                             <div class="btn-group">
                                                 <a href="#" type="button" class="btn btn-secondary btn-sm">Visualizar</a>
-                                                <a href="usuarios/{{ $u->user_id }}/edit" type="button" class="btn btn-warning btn-sm">Editar</a>
+                                                <a href="usuarios/{{ $u->id }}/edit" type="button" class="btn btn-warning btn-sm">Editar</a>
                                                 <a href="#" type="button" class="btn btn-danger btn-sm">Excluir</a>
                                             </div>
                                         </div>

@@ -14,9 +14,9 @@ class Usuario extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'user_id',
+        'id',
         'name',
-        'login',
+        'user_id',
         'password',
         'status'
     ];
