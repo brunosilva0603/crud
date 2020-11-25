@@ -22,7 +22,7 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">Login</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Editar</th>
+                                <th colspan="2">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,15 +33,13 @@
                                 <td>{{ $u->user_id }}</td>
                                 <td>{{ $u->status }}</td>
                                 <td>
-                                    <div class="well hidden well-sm" data-target="tabela1">
-                                        <div class="actions">
-                                            <div class="btn-group">
-                                                <a href="#" type="button" class="btn btn-secondary btn-sm">Visualizar</a>
-                                                <a href="usuarios/{{ $u->id }}/edit" type="button" class="btn btn-warning btn-sm">Editar</a>
-                                                <a href="#" type="button" class="btn btn-danger btn-sm">Excluir</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="usuarios/{{ $u->id }}/edit" class="btn btn-info">Editar </a></td>
+                                <td>
+                                    <form action="usuarios/delete/{{ $u->id }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="btn btn-danger">Deletar</button>
+                                    </form>
                                 </td>
                             </tr>@endforeach
                         </tbody>

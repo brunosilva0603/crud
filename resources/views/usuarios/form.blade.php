@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Login:</label>
-                            <input type="text" name="login" class="form-control">
+                            <input type="text" name="user_id" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Digite sua senha</label>

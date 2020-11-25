@@ -26,5 +26,6 @@ Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'ne
 Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add']); //rota adicionar new
 Route::get('usuarios/{id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit']);
 Route::post('usuarios/update/{id}', [App\Http\Controllers\UsuariosController::class, 'update']);
+Route::post('usuarios/delete/{id}', [App\Http\Controllers\UsuariosController::class, 'delete']);
 
 
