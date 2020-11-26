@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><a href="{{ url('/') }}">Home</a> | <a href="{{ url('usuarios/new') }}">Novo usuario</a></div>
+                <div class="card-header"><a href="{{ url('/') }}" class="btn btn-info">Home </a></td> | <a href="{{ url('usuarios/new') }}" class="btn btn-success">Novo usuario</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,9 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    <h1>Lista dos usuarios</h1>
+                    <h2>
+                    <div class="card-header text-center">Cadastrados</div>
+                </h2>
                     <table class="table table-bordered">
                         <thead class="thead-light">
                             <tr>
@@ -33,7 +34,7 @@
                                 <td>{{ $u->user_id }}</td>
                                 <td>{{ $u->status }}</td>
                                 <td>
-                                    <a href="usuarios/{{ $u->id }}/edit" class="btn btn-info">Editar </a></td>
+                                    <a href="usuarios/{{ $u->id }}/edit" class="btn btn-warning">Editar </a></td>
                                 <td>
                                     <form action="usuarios/delete/{{ $u->id }}" method="post">
                                         @csrf
