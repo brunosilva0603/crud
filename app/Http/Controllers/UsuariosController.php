@@ -51,7 +51,7 @@ class UsuariosController extends Controller
     public function delete($id)
     {
         $usuario = User::findOrFail($id);
-        $usuario->delete();
+        $usuario->where('id', $id)->update(['status' => '0']);
         return Redirect::to('/usuarios');
     }
 }
