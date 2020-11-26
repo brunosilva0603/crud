@@ -11,13 +11,13 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $table = 'users';
+    
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
+        'user_id',
         'email',
         'password',
     ];
